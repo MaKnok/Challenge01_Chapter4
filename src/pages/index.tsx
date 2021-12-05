@@ -1,5 +1,5 @@
 import { Flex, Divider, Text, Box } from "@chakra-ui/react";
-import { Banner } from "../components/Banner";
+import {Banner} from "../components/Banner";
 import ContinentsSlides from "../components/ContinentsSlides";
 import { Header } from "../components/Header";
 import { TripStyles } from "../components/TripStyles";
