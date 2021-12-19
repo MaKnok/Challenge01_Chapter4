@@ -21,21 +21,21 @@ import {
 
 interface Continent{
   data: {
-    imageBannerSource: {
+    imagebannersource: {
       url: string;
     };
-    continentName: string; 
+    continentname: string; 
     description: string;
-    countriesNumber: number;
-    languagesNumber: number;
-    citiesNumber: number;
+    countriesnumber: number;
+    languagesnumber: number;
+    citiesnumber: number;
     destinies:{
-      imageCity100Source: {
+      imagecity100source: {
         url: string;
       }; 
-      cityName: string;
-      countryName: string;
-      countryCode: string;
+      cityname: string;
+      countryname: string;
+      countrycode: string;
     }[]
   }
 }
@@ -54,38 +54,50 @@ export default function Continent(
   const cardCities = destinies.map((destiny,i) => 
       <CardCities 
       key={`destiny-${i}`}
-      imageCity100Source={ destiny.imageCity100Source.url } 
-      cityName={ destiny.cityName } 
-      countryName={ destiny.countryName } 
-      countryCode={ destiny.countryCode }/>
+      imageCity100Source={ destiny.imagecity100source.url } 
+      cityName={ destiny.cityname } 
+      countryName={ destiny.countryname } 
+      countryCode={ destiny.countrycode }/>
   )
+
+  var row1 = [];
+  for (var i = 0; i <= 3; i++) {
+    row1.push(cardCities[i]);
+  }
+
+  var row2 = [];
+  for (var i = 4; i < cardCities.length; i++) {
+    row2.push(cardCities[i]);
+  }
 
   return (
     <Flex direction="column">
       <Header />
-      <BannerContinent imageBannerSource={continent.data.imageBannerSource.url} continentName={continent.data.continentName}/>
+      <BannerContinent imageBannerSource={continent.data.imagebannersource.url} continentName={continent.data.continentname}/>
 
       <Flex 
-        direction="row"
-        px="140"
-        mt="20"
-        mb="20"
+        direction={["column","row"]}
+        align="center"
+        px={["4","20"]}
+        mt={["6","20"]}
+        mb={["8","20"]}
       >
           <Text 
-            w="600px" 
+            w={["343px","600px"]} 
             fontWeight="normal" 
-            fontSize="24px" 
+            fontSize={["14px","24px"]}
             textAlign="justify"
             textJustify= "inter-word"
-            lineHeight="36px" 
+            lineHeight={["21px","36px"]}
             color="gray.600"
           >
-            { RichText.asHTML(continent.data.description) }
+            { RichText.asText(continent.data.description) }
           </Text>
 
           <Flex 
-          w="490px"
-          ml="70px"
+          w={["343px","490px"]}
+          mt={["4","0"]}
+          ml={["0","70px"]}
           direction="row"
           justifyContent="space-between"
           >
@@ -96,21 +108,21 @@ export default function Continent(
               > 
                   <Box
                   as="span"
-                  fontSize="48px"
+                  fontSize={["24px","48px"]}
                   fontWeight="semibold"
                   color="yellow.400"
-                  textAlign="center"
+                  textAlign={["left","center"]}
                   >
-                  {continent.data.countriesNumber}
+                  {continent.data.countriesnumber}
                   </Box>
 
                   <Box
                   as="span"
-                  fontSize="24px"
-                  fontWeight="semibold"
+                  fontSize={["18px","24px"]}
+                  fontWeight={["normal","semibold"]}
                   color="gray.600"
                   textAlign="center"
-                  mt="-3"
+                  mt={["-1","-3"]}
                   >
                   países
                   </Box>
@@ -124,21 +136,21 @@ export default function Continent(
               > 
                   <Box
                   as="span"
-                  fontSize="48px"
+                  fontSize={["24px","48px"]}
                   fontWeight="semibold"
                   color="yellow.400"
-                  textAlign="center"
+                  textAlign={["left","center"]}
                   >
-                  {continent.data.languagesNumber}
+                  {continent.data.languagesnumber}
                   </Box>
 
                   <Box
                   as="span"
-                  fontSize="24px"
-                  fontWeight="semibold"
+                  fontSize={["18px","24px"]}
+                  fontWeight={["normal","semibold"]}
                   color="gray.600"
                   textAlign="center"
-                  mt="-3"
+                  mt={["-1","-3"]}
                   >
                   línguas
                   </Box>
@@ -149,25 +161,24 @@ export default function Continent(
 
                 <Flex 
                   direction="column"
-                  alignItens="center"
                 > 
                   <Box
                   as="span"
-                  fontSize="48px"
+                  fontSize={["24px","48px"]}
                   fontWeight="semibold"
                   color="yellow.400"
-                  textAlign="center"
+                  textAlign={["left","center"]}
                   >
-                  {continent.data.citiesNumber}
+                  {continent.data.citiesnumber}
                   </Box>
                   <Flex direction="row">
                   <Box
                   as="span"
-                  fontSize="24px"
-                  fontWeight="semibold"
+                  fontSize={["18px","24px"]}
+                  fontWeight={["normal","semibold"]}
                   color="gray.600"
                   textAlign="center"
-                  mt="-3"
+                  mt={["-1","-3"]}
                   >
                   cidades +100 
                   </Box>
@@ -180,7 +191,7 @@ export default function Continent(
                     autoFocus={false}
                     >
                       <PopoverTrigger>
-                          <InfoOutlineIcon w={4} h={4} color="gray.500" ml="5px"/>
+                          <InfoOutlineIcon w={["2.5","4"]} h={["2.5","4"]} color="gray.500" ml="5px"/>
                       </PopoverTrigger>
                       <PopoverContent borderColor="yellow.400">
                           <PopoverArrow />
@@ -196,9 +207,36 @@ export default function Continent(
               </Flex>
 
           </Flex>
+          
       </Flex>
 
-      {cardCities}
+      <Flex 
+        direction="column"
+        align="left"
+        px={["4","20"]}
+        mb={"10"}
+      >
+        <Text fontSize={["24px","36px"]} color="gray.600" fontWeight="medium" mb={["0","10"]}>Cidades +100</Text>
+        <Flex 
+        direction={["column","row"]}
+        alignItems="center"
+        justifyContent="space-between"
+        w="100%"
+       >
+       {row1}
+       </Flex>
+       <Flex 
+        direction={["column","row"]}
+        align="center"
+        justifyContent="space-between"
+        w="100%"
+        mt={["0","16"]}
+       >
+       {row2}
+       </Flex>
+      
+        
+      </Flex>
 
     </Flex>
   );

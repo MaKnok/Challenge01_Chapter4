@@ -11,8 +11,8 @@ import 'swiper/css';
 export default function ContinentsSlides () {
   return (
     <>
-      <Box mt="52px">
-          <Text fontSize="36px" lineHeight="54px" fontWeight="medium" color="gray.600" textAlign="center">
+      <Box mt="13">
+          <Text fontSize={["20px","36px"]} lineHeight={["30px","54px"]} fontWeight="medium" color="gray.600" textAlign="center">
             Vamos nessa? <br/> Então escolha o seu continente
           </Text>
       </Box>
@@ -21,9 +21,10 @@ export default function ContinentsSlides () {
       w="100%"
       maxW="1240px"
       mx="auto"
-      mt="52px"
+      mt={["5", "13"]}
       mb={["5", "10"]}
       h={["250px", "450px"]}
+      px={["0", "20"]}
       >
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}

@@ -13,8 +13,6 @@ export default function Home() {
         <Banner/>
         <TripStyles/>
 
-        <Divider orientation="horizontal" w="90px" mt="20" borderColor="gray.600" fontWeight="semibold" borderWidth="2px"/>
-
         <ContinentsSlides/>
 
     </Flex>

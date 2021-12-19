@@ -14,16 +14,18 @@ export function BannerContinent(
       as="header" 
       w="100%" 
       maxWidth={1440}
-      maxHeight="500" 
+      h={["150px","500px"]} 
       mx="auto"
-      justifyContent="flex-start"
-      alignItems="flex-end"
+      justifyContent={["center","flex-start"]}
+      alignItems={["center","flex-end"]}
       bgImage={imageBannerSource}
-      px="140"
-      pb="59"
+      bgSize="cover"
+      bgRepeat="no-repeat"
+      px={["0","20"]}
+      pb={["0","59"]}
     >
       <Box color="gray.50">
-        <Text fontWeight="semibold" fontSize="48px">{continentName}</Text>
+        <Text fontWeight="semibold" fontSize={["28px","48px"]}>{continentName}</Text>
       </Box>
     </Flex>
   );

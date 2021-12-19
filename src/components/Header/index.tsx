@@ -12,12 +12,12 @@ export function Header() {
       as="header" 
       w="100%" 
       maxWidth={1440}
-      h="100"
+      h={["50px","100px"]}
       py="27"
       mx="auto"
       justifyContent="flex-start"
       alignItems="center"
-      px="140"
+      px="20"
     >
 
      {notHomePage && (
@@ -33,7 +33,7 @@ export function Header() {
         )}
 
         <Grid
-        h="100%"
+        h={["20px","46px"]}
         mx="auto"
         w="100%"
         maxW="1160px"
@@ -41,10 +41,10 @@ export function Header() {
         justifyContent="center"
       >
        
-      <Box>
-          <Image src="/images/logo.svg" alt="worldtrip" w={["81px", "184px"]}  justifySelf="center"
-          gridColumn="2"/>
-      </Box>
+        <Box>
+            <Image src="/images/logo.svg" alt="worldtrip" w={["81px", "184px"]}  justifySelf="center"
+            gridColumn="2"/>
+        </Box>
     
       </Grid>
 

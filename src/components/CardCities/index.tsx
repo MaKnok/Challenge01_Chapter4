@@ -24,16 +24,15 @@ export function CardCities({
     direction="column"
     w="100%" 
     maxWidth={1440}
-    h="700" 
+    h="auto" 
     mx="auto"
+    mt={["5","0"]}
     justifyContent="flex-start"
-    px="140"
-    pb="35"
+    alignItems={["center","flex-start"]}
   >
-    <Text fontSize="36px" color="gray.600" fontWeight="medium" mb="40px">Cidades +100</Text>
-
+    
     <Flex
-      height="279px"
+      h="279px"
       w="256px"
       direction="column"
       border="1px solid rgba(255, 186, 8, 0.5)"
